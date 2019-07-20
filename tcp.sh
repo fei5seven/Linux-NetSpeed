@@ -545,7 +545,7 @@ check_status(){
 	fi
 	if [[ ${kernel_status} == "Lotserver" ]]; then
 		if [[ -e /appex/bin/lotServer.sh ]]; then
-			run_status=`bash /appex/bin/lotServer.sh status | grep "lotServer" | awk  '{print $3}'`
+			run_status=`bash /appex/bin/lotServer.sh status | grep "LotServer" | awk  '{print $3}'`
 			if [[ ${run_status} = "running!" ]]; then
 				run_status="启动成功"
 			else 

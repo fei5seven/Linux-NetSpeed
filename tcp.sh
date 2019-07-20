@@ -180,8 +180,8 @@ startlotserver(){
 		apt-get update
 		apt-get install -y unzip
 	fi
-	wget --no-check-certificate -O appex.sh https://raw.githubusercontent.com/0oVicero0/serverSpeeder_Install/master/appex.sh && chmod +x appex.sh && bash appex.sh install
-	rm -f appex.sh
+	wget --no-check-certificate -O Install.sh https://raw.githubusercontent.com/fei5seven/lotServer/master/Install.sh && chmod +x Install.sh && bash Install.sh install
+	rm -f Install.sh
 	start_menu
 }
 
@@ -223,9 +223,9 @@ remove_all(){
 	sed -i '/net.core.netdev_max_backlog/d' /etc/sysctl.conf
 	sed -i '/net.ipv4.tcp_timestamps/d' /etc/sysctl.conf
 	sed -i '/net.ipv4.tcp_max_orphans/d' /etc/sysctl.conf
-	if [[ -e /appex/bin/serverSpeeder.sh ]]; then
-		wget --no-check-certificate -O appex.sh https://raw.githubusercontent.com/0oVicero0/serverSpeeder_Install/master/appex.sh && chmod +x appex.sh && bash appex.sh uninstall
-		rm -f appex.sh
+	if [[ -e /Install/bin/lotServer.sh ]]; then
+		wget --no-check-certificate -O Install.sh wget --no-check-certificate -O Install.sh https://raw.githubusercontent.com/fei5seven/lotServer/master/Install.sh && chmod +x Install.sh && bash Install.sh uninstall
+		rm -f Install.sh
 	fi
 	clear
 	echo -e "${Info}:清除加速完成。"
@@ -520,7 +520,7 @@ check_sys_Lotsever(){
 	elif [[ "${release}" == "ubuntu" ]]; then
 		if [[ ${version} -ge "12" ]]; then
 			if [[ ${bit} == "x64" ]]; then
-				kernel_version="4.4.0-142"
+				kernel_version="4.4.0-"
 				installlot
 			elif [[ ${bit} == "x32" ]]; then
 				kernel_version="3.13.0-29"
@@ -544,8 +544,8 @@ check_status(){
 		kernel_status="noinstall"
 	fi
 	if [[ ${kernel_status} == "Lotserver" ]]; then
-		if [[ -e /appex/bin/serverSpeeder.sh ]]; then
-			run_status=`bash /appex/bin/serverSpeeder.sh status | grep "ServerSpeeder" | awk  '{print $3}'`
+		if [[ -e /Install/bin/lotServer.sh ]]; then
+			run_status=`bash /Install/bin/lotServer.sh status | grep "lotServer" | awk  '{print $3}'`
 			if [[ ${run_status} = "running!" ]]; then
 				run_status="启动成功"
 			else 

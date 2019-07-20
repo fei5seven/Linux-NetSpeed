@@ -223,7 +223,7 @@ remove_all(){
 	sed -i '/net.core.netdev_max_backlog/d' /etc/sysctl.conf
 	sed -i '/net.ipv4.tcp_timestamps/d' /etc/sysctl.conf
 	sed -i '/net.ipv4.tcp_max_orphans/d' /etc/sysctl.conf
-	if [[ -e /Install/bin/lotServer.sh ]]; then
+	if [[ -e /appex/bin/lotServer.sh ]]; then
 		wget --no-check-certificate -O Install.sh wget --no-check-certificate -O Install.sh https://raw.githubusercontent.com/fei5seven/lotServer/master/Install.sh && chmod +x Install.sh && bash Install.sh uninstall
 		rm -f Install.sh
 	fi
@@ -544,8 +544,8 @@ check_status(){
 		kernel_status="noinstall"
 	fi
 	if [[ ${kernel_status} == "Lotserver" ]]; then
-		if [[ -e /Install/bin/lotServer.sh ]]; then
-			run_status=`bash /Install/bin/lotServer.sh status | grep "lotServer" | awk  '{print $3}'`
+		if [[ -e /appex/bin/lotServer.sh ]]; then
+			run_status=`bash /appex/bin/lotServer.sh status | grep "lotServer" | awk  '{print $3}'`
 			if [[ ${run_status} = "running!" ]]; then
 				run_status="启动成功"
 			else 

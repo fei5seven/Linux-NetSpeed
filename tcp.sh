@@ -520,7 +520,7 @@ check_sys_Lotsever(){
 	elif [[ "${release}" == "ubuntu" ]]; then
 		if [[ ${version} -ge "12" ]]; then
 			if [[ ${bit} == "x64" ]]; then
-				kernel_version="4.4.0-"
+				kernel_version="4.4.0-142"
 				installlot
 			elif [[ ${bit} == "x32" ]]; then
 				kernel_version="3.13.0-29"

@@ -180,7 +180,7 @@ startlotserver(){
 		apt-get update
 		apt-get install -y unzip
 	fi
-	wget --no-check-certificate -O appex.sh https://raw.githubusercontent.com/fei5seven/serverSpeeder_Install/master/appex.sh && chmod +x appex.sh && bash appex.sh install
+	wget --no-check-certificate -O appex.sh https://raw.githubusercontent.com/0oVicero0/serverSpeeder_Install/master/appex.sh && chmod +x appex.sh && bash appex.sh install
 	rm -f appex.sh
 	start_menu
 }

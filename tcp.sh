@@ -179,7 +179,7 @@ startlotserver(){
 		yum install ethtool
 	else
 		apt-get update
-		yum install ethtool
+		apt-get install ethtool
 		apt-get install -y unzip
 	fi
 	wget --no-check-certificate -O Install.sh https://raw.githubusercontent.com/fei5seven/lotServer/master/Install.sh && chmod +x Install.sh && bash Install.sh install

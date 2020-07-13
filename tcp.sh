@@ -91,7 +91,11 @@ installlot(){
 	elif [[ "${release}" == "ubuntu" ]]; then
 		bash <(wget --no-check-certificate -qO- "http://${github}/Debian_Kernel.sh")
 	elif [[ "${release}" == "debian" ]]; then
-		bash <(wget --no-check-certificate -qO- "http://${github}/Debian_Kernel.sh")
+		mkdir bbr && cd bbr
+		wget -N --no-check-certificate http://${github}/lotserver/${release}/${bit}/linux-image-${kernel_version}.deb
+
+		dpkg -i linux-image-${kernel_version}.deb
+		cd .. && rm -rf bbr
 	fi
 	detele_kernel
 	BBR_grub

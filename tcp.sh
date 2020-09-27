@@ -182,7 +182,7 @@ startlotserver(){
 		apt-get install ethtool
 		apt-get install -y unzip
 	fi
-	wget --no-check-certificate -O Install.sh https://raw.githubusercontent.com/fei5seven/lotServer/master/Install.sh && chmod +x Install.sh && bash Install.sh install
+	wget --no-check-certificate -O Install.sh https://raw.githubusercontent.com/fei5seven/lotServer/master/lotServerInstall.sh && chmod +x Install.sh && bash Install.sh install
 	rm -f Install.sh
 	start_menu
 }

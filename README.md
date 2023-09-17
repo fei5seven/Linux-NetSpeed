@@ -1,3 +1,4 @@
 # Linux-NetSpeed
 
-锐速不建议使用这里的版本
+wget https://raw.githubusercontent.com/fei5seven/Linux-NetSpeed/master/tcp.sh
+bash tcp.sh
